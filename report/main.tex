@@ -1,0 +1,102 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Language and fonts
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{libertinus}
+\usepackage[scaled=0.9]{inconsolata}
+\usepackage{microtype}
+
+% --- Page layout
+\usepackage[a4paper,margin=2.5cm,headheight=14pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=4pt}
+
+% --- Figures and tables
+\usepackage{graphicx}
+\graphicspath{{figures/}{../assets/}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage[section]{placeins}  % keep floats inside their section
+\makeatletter  % stack floats at the top of float-only pages
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{1.2cm}
+\makeatother
+
+% --- Math and code
+\usepackage{amsmath}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+
+% --- Bibliography and links
+\usepackage{csquotes}
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib}
+\usepackage[hidelinks]{hyperref}
+
+% --- Style
+\definecolor{cyblue}{HTML}{2A5BA7}
+\titleformat{\section}{\Large\bfseries\color{cyblue}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.8em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{gray}{SignaVision -- Reconnaissance de panneaux de signalisation}}
+\fancyhead[R]{\small\textcolor{gray}{CY Tech 2026--2027}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Small pictogram used in the class table
+\newcommand{\picto}[1]{\raisebox{-0.3\height}{\includegraphics[height=1.3em]{pictograms/#1.png}}}
+
+\newcommand{\auteurs}{Nathan GUIHOT \qquad Elyes DOS SANTOS}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \includegraphics[height=2.2cm]{cytech.png}\par
+  \vspace{4cm}
+  {\large Fondamentaux du Deep Learning\par}
+  \vspace{0.8cm}
+  {\color{cyblue}\rule{\linewidth}{0.8pt}}\par
+  \vspace{0.4cm}
+  {\Huge\bfseries\color{cyblue} SignaVision\par}
+  \vspace{0.4cm}
+  {\LARGE Reconnaissance automatique\\[0.15cm] de panneaux de signalisation\par}
+  \vspace{0.4cm}
+  {\color{cyblue}\rule{\linewidth}{0.8pt}}\par
+  \vspace{0.6cm}
+  {\large Rapport de projet\par}
+  \vspace{2.5cm}
+  {\large \auteurs\par}
+  \vfill
+  {Encadrante : Hanane Zerdoum\par}
+  \vspace{0.3cm}
+  {Octobre 2026\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\input{sections/01_introduction}
+\input{sections/02_data}
+% \input{sections/03_baseline}
+% \input{sections/04_cnn}
+% \input{sections/05_training}
+% \input{sections/06_evaluation}
+% \input{sections/07_experiments}
+% \input{sections/08_conclusion}
+
+\printbibliography[heading=bibintoc,title={Références}]
+
+\end{document}
